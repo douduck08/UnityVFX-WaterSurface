@@ -13,15 +13,16 @@ public class ProceduralGrid : MonoBehaviour {
 		Generate();
 	}
 
-	public int xSize = 1;
-	public int ySize = 1;
 	public Color verticeColor = Color.white;
+	public int xSegment = 1;
+	public int ySegment = 1;
+	public Vector2 size = Vector2.one;
 
 	Mesh m_mesh;
 
 	public void Generate () {
-		if (xSize <= 0 || ySize == 0) {
-			throw new System.InvalidOperationException ("xSize and ySize must be positive int");
+		if (xSegment <= 0 || ySegment == 0) {
+			throw new System.InvalidOperationException ("xSegment and ySegment must be positive int");
 		}
 
 		this.GetComponent<MeshFilter>().mesh = m_mesh = new Mesh();
@@ -31,26 +32,26 @@ public class ProceduralGrid : MonoBehaviour {
 			meshCollider.sharedMesh = m_mesh;
 		}
 
-		int verticeCount = (xSize + 1) * (ySize + 1);
+		int verticeCount = (xSegment + 1) * (ySegment + 1);
 		Vector3[] vertices = new Vector3[verticeCount];
 		Vector2[] uv =  new Vector2[verticeCount];
 		Color[] colors =  new Color[verticeCount];
-		int[] triangles = new int[xSize * ySize * 6];
+		int[] triangles = new int[xSegment * ySegment * 6];
 
-		for (int vIdx = 0, y = 0; y <= ySize; y++) {
-			for (int x = 0; x <= xSize; x++, vIdx++) {
-				vertices[vIdx] = new Vector3((float)x / xSize, 0, (float)y / ySize);
-				uv[vIdx] = new Vector2 ((float)x / xSize, (float)y / ySize);
+		for (int vIdx = 0, y = 0; y <= ySegment; y++) {
+			for (int x = 0; x <= xSegment; x++, vIdx++) {
+				vertices[vIdx] = new Vector3(size.x * ((float)x / xSegment - 0.5f), size.y * ((float)y / ySegment - 0.5f));
+				uv[vIdx] = new Vector2 ((float)x / xSegment, (float)y / ySegment);
 				colors[vIdx]  = verticeColor;
 			}
 		}
 
-		for (int vIdx = 0, tIdx = 0, y = 0; y < ySize; y++, vIdx++) {
-			for (int x = 0; x < xSize; x++, vIdx++, tIdx += 6) {
+		for (int vIdx = 0, tIdx = 0, y = 0; y < ySegment; y++, vIdx++) {
+			for (int x = 0; x < xSegment; x++, vIdx++, tIdx += 6) {
 				triangles[tIdx] = vIdx;
-				triangles[tIdx + 1] = triangles[tIdx + 4] = vIdx + xSize + 1;
+				triangles[tIdx + 1] = triangles[tIdx + 4] = vIdx + xSegment + 1;
 				triangles[tIdx + 2] = triangles[tIdx + 3] = vIdx + 1;
-				triangles[tIdx + 5] = vIdx + xSize + 2;
+				triangles[tIdx + 5] = vIdx + xSegment + 2;
 			}
 		} 
 
