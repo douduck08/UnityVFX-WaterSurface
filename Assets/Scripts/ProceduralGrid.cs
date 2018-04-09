@@ -60,5 +60,7 @@ public class ProceduralGrid : MonoBehaviour {
 		m_mesh.triangles = triangles;
 		m_mesh.colors = colors;
 		m_mesh.RecalculateNormals();
+		m_mesh.RecalculateTangents();
+		m_mesh.RecalculateBounds();
 	}
 }
