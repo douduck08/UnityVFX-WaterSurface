@@ -25,12 +25,8 @@ public class ProceduralGrid : MonoBehaviour {
 			throw new System.InvalidOperationException ("xSegment and ySegment must be positive int");
 		}
 
-		this.GetComponent<MeshFilter>().mesh = m_mesh = new Mesh();
+		m_mesh = new Mesh();
 		m_mesh.name = "Procedural Grid";
-		var meshCollider = this.GetComponent<MeshCollider> ();
-		if (meshCollider != null) {
-			meshCollider.sharedMesh = m_mesh;
-		}
 
 		int verticeCount = (xSegment + 1) * (ySegment + 1);
 		Vector3[] vertices = new Vector3[verticeCount];
@@ -62,5 +58,11 @@ public class ProceduralGrid : MonoBehaviour {
 		m_mesh.RecalculateNormals();
 		m_mesh.RecalculateTangents();
 		m_mesh.RecalculateBounds();
+
+		this.GetComponent<MeshFilter>().mesh = m_mesh;
+		var meshCollider = this.GetComponent<MeshCollider> ();
+		if (meshCollider != null) {
+			meshCollider.sharedMesh = m_mesh;
+		}
 	}
 }
