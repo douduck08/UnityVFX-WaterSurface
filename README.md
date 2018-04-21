@@ -1,4 +1,5 @@
 ### Unity Virtual FX about Water Surface
+Using Unity 2017.4.1f1
 
 ### Flow Map
 * Store direction vector in to vertex color.
@@ -10,14 +11,6 @@
 
 * Animating Water Using Flow Maps: http://graphicsrunner.blogspot.tw/2010/08/water-using-flow-maps.html
 * Example in slipster216/VertexPaint: https://github.com/slipster216/VertexPaint/tree/master/Examples/FlowMapping
-
-### Water Surface Wave
-Incomplete
-
-#### Ref
-* ya7gisa0/Unity-Wave-Propagation-Water-Ripple: https://github.com/ya7gisa0/Unity-Wave-Propagation-Water-Ripple
-* unity3d-jp/WaveShooter: https://github.com/unity3d-jp/WaveShooter
-* 【Unite 2017 Tokyo】スマートフォンでどこまでできる？: https://www.slideshare.net/UnityTechnologiesJapan/unite-2017-tokyo3d-76689196
 
 ### Water Ripple Effect
 ![ripple](https://raw.githubusercontent.com/douduck08/UnityVFX-WaterSurface/master/img/ripple.jpg)
