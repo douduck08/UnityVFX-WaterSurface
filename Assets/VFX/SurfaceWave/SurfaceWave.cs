@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;  
+using UnityEngine.Rendering;
 
 [RequireComponent(typeof(Renderer))]
 public class SurfaceWave : MonoBehaviour {
@@ -61,8 +61,10 @@ public class SurfaceWave : MonoBehaviour {
 	public void OnClickDown (Vector3 pos) {
 		var ray = Camera.main.ScreenPointToRay(pos);
 		if (Physics.Raycast (ray, out m_hit)) {
-			// TODO
-			Debug.Log (m_hit.point);
+			if (m_hit.collider.gameObject == this.gameObject) {
+				// TODO
+				Debug.Log (m_hit.point);
+			}
 		}
 	}
 }
