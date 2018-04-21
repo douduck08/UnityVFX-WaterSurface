@@ -6,7 +6,7 @@
 * Lerp between two texture color/normal to smooth boundary.
 
 #### Ref
-![flowmap](https://github.com/douduck08/repository/UnityVFX-WaterSurface/master/img/flowmap.jpg)
+![flowmap](https://raw.githubusercontent.com/douduck08/UnityVFX-WaterSurface/master/img/flowmap.jpg)
 
 * Animating Water Using Flow Maps: http://graphicsrunner.blogspot.tw/2010/08/water-using-flow-maps.html
 * Example in slipster216/VertexPaint: https://github.com/slipster216/VertexPaint/tree/master/Examples/FlowMapping
@@ -20,12 +20,12 @@ Incomplete
 * 【Unite 2017 Tokyo】スマートフォンでどこまでできる？: https://www.slideshare.net/UnityTechnologiesJapan/unite-2017-tokyo3d-76689196
 
 ### Water Ripple Effect
-![ripple](https://github.com/douduck08/repository/UnityVFX-WaterSurface/master/img/ripple.jpg)
+![ripple](https://raw.githubusercontent.com/douduck08/UnityVFX-WaterSurface/master/img/ripple.jpg)
+[Demo in Youtube](https://www.youtube.com/watch?v=k5ZLzOtziK0)
 
 * Use a script to do raycast and update wave source data
 * Compute distance and movement of time，use sin function and normal to make vertex displacement
 * For reality, combine some decay into the formula
-[Demo in Youtube](https://www.youtube.com/watch?v=k5ZLzOtziK0)
 
 #### Ref
 * keijiro/RippleEffect: https://github.com/keijiro/RippleEffect
