@@ -21,6 +21,7 @@ Incomplete
 
 ### Water Ripple Effect
 ![ripple](https://raw.githubusercontent.com/douduck08/UnityVFX-WaterSurface/master/img/ripple.jpg)
+
 [Demo in Youtube](https://www.youtube.com/watch?v=k5ZLzOtziK0)
 
 * Use a script to do raycast and update wave source data
